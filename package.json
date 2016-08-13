@@ -1,0 +1,23 @@
+{
+  "name": "calculator-swag",
+  "version": "1.0.0",
+  "description": "serverside calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tthoraldson/calculatorSwag.git"
+  },
+  "author": "theresa.thoraldson@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tthoraldson/calculatorSwag/issues"
+  },
+  "homepage": "https://github.com/tthoraldson/calculatorSwag#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
+}
