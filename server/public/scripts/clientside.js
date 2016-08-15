@@ -2,6 +2,7 @@ var values = {};
 
 $(document).ready(function(){
   console.log("document is ready");
+  appendDom();
 
   $('#form').on('submit', function(event){
     event.preventDefault();
@@ -14,19 +15,40 @@ $(document).ready(function(){
 
     $('#form').find('input[type=number]').val('');
     console.log(values)
+    findOperator(values);
+    appendDom();
   });
-  addition();
+
 });
+
+var findOperator = function(object){
+  var operator = object.operator;
+  switch(operator){
+    case 'addition':
+      addition();
+      break;
+    case 'subtraction':
+      subtraction();
+      break;
+    case 'multiplication':
+      multiplication();
+      break;
+    case 'division':
+      division();
+      break;
+  }
+};
 
 var addition = function(){
   $.ajax({
     type: 'POST',
     url: '/addition',
+    data: values,
     success: function() {
       console.log('addition was succussful!');
     },
     error: function() {
-      console.log('post failed');
+      console.log('addition failed');
     }
   });
 };
@@ -34,12 +56,13 @@ var addition = function(){
 var subtraction = function(){
   $.ajax({
     type: 'POST',
-    url: '/subdraction',
+    url: '/subtraction',
+    data: values,
     success: function() {
-      console.log('addition was succussful!');
+      console.log('subtraction was succussful!');
     },
     error: function() {
-      console.log('post failed');
+      console.log('subtraction failed');
     }
   });
 };
@@ -48,11 +71,12 @@ var multiplication = function(){
   $.ajax({
     type: 'POST',
     url: '/multiplication',
+    data: values,
     success: function() {
-      console.log('addition was succussful!');
+      console.log('multiplication was succussful!');
     },
     error: function() {
-      console.log('post failed');
+      console.log('multiplication failed');
     }
   });
 };
@@ -61,11 +85,30 @@ var division = function(){
   $.ajax({
     type: 'POST',
     url: '/division',
+    data: values,
     success: function() {
-      console.log('addition was succussful!');
+      console.log('division was succussful!');
     },
     error: function() {
-      console.log('post failed');
+      console.log('division failed');
     }
   });
 };
+
+var appendDom = function(){
+  var solutionLog = $.ajax({
+    type: 'GET',
+    url: '/solutionLog',
+    success: function(solutionLog){
+      $('#solutionDIV').empty();
+      solutionLog.reverse();
+      solutionLog.forEach(function(solution){
+        $('#solutionDIV').append('<div>' + solution + '</div>');
+      });
+    }
+  });
+};
+
+var clearSolutionLog = function(){
+  
+}

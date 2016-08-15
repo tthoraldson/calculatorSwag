@@ -1,27 +1,35 @@
 
 <html>
-<head>
-  <title>CALCULATOR SWAG</title>
-  <script src="vendor/jquery.min.js"></script>
-  <script src="scripts/clientside.js"></script>
-  <link rel="stylesheet" href="styles/main.css" />
-</head>
-<body>
-  <h1>Swag Calculator</h1>
-  <form id="form">
-  <fieldset>
-    <legend>Enter Values</legend>
-    <label for="x">First Value:</label><br />
-    <input type="number" name="x"><br>
-    <label for="y">Second Value:</label><br />
-    <input type="number" name="y"><br /><br />
-    <label for="operator">Operator:</label><br />
-    <input type="radio" name="operator" value="addition">addition<br>
-    <input type="radio" name="operator" value="subtraction">subtraction<br>
-    <input type="radio" name="operator" value="multiplication">multiplication<br>
-    <input type="radio" name="operator" value="division">division<br>
-    <input type="submit" value="Submit">
-  </fieldset>
-</form>
-</body>
+  <head>
+    <title>CALCULATOR SWAG</title>
+    <script src="vendor/jquery.min.js"></script>
+    <script src="scripts/clientside.js"></script>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+      <section>
+        <h1>Swag Calculator</h1>
+        <form id="form">
+        <fieldset>
+          <legend>Enter Values</legend>
+          <label for="x">First Value:</label><br />
+          <input type="number" name="x"><br>
+          <label for="y">Second Value:</label><br />
+          <input type="number" name="y"><br /><br />
+          <label for="operator">Operator:</label><br />
+          <input type="radio" name="operator" value="addition">addition<br>
+          <input type="radio" name="operator" value="subtraction">subtraction<br>
+          <input type="radio" name="operator" value="multiplication">multiplication<br>
+          <input type="radio" name="operator" value="division">division<br>
+          <input type="submit" value="Submit">
+        </fieldset>
+      </form>
+    </section>
+    <main>
+      <button class="clear">Clear Solutions</button>
+      <h1>Solutions:</h1>
+      <div id="solutionDIV">
+      </div>
+    </main>
+  </body>
 </html>

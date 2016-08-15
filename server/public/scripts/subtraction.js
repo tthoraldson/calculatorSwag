@@ -1,4 +1,4 @@
-// '/subdraction' module
+// '/subtraction' module
 module.exports = function(x, y){
   return x - y;
 }
