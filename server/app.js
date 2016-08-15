@@ -17,8 +17,15 @@ app.use(bodyParser.urlencoded({extended: true}));
 var solutionLog = [];
 
 //Routes
+app.get('/clearSolutionLog', function(req, res){
+  solutionLog = [];
+  res.send(solutionLog);
+  res.send(200);
+});
+
 app.get('/solutionLog', function(req, res){
   res.send(solutionLog);
+  res.send(200);
 });
 
 app.post('/addition', function(req, res){
@@ -29,6 +36,7 @@ app.post('/addition', function(req, res){
   var solutionLogEntry = addx + " + " + addy + " = " + solution;
   solutionLog.push(solutionLogEntry);
   console.log(solutionLogEntry);
+  res.send(200);
 });
 
 app.post('/division', function(req, res){
@@ -39,6 +47,7 @@ app.post('/division', function(req, res){
   var solutionLogEntry = divx + " / " + divy + " = " + solution;
   solutionLog.push(solutionLogEntry);
   console.log(solutionLogEntry);
+  res.send(200);
 });
 
 app.post('/multiplication', function(req, res){
@@ -49,6 +58,7 @@ app.post('/multiplication', function(req, res){
   var solutionLogEntry = mulx + " * " + muly + " = " + solution;
   solutionLog.push(solutionLogEntry);
   console.log(solutionLogEntry);
+  res.send(200);
 });
 
 app.post('/subtraction', function(req, res){
@@ -59,6 +69,7 @@ app.post('/subtraction', function(req, res){
   var solutionLogEntry = subx + " - " + suby + " = " + solution;
   solutionLog.push(solutionLogEntry);
   console.log(solutionLogEntry);
+  res.send(200);
 });
 
 // serve static files

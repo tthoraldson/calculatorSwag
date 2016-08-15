@@ -19,6 +19,15 @@ $(document).ready(function(){
     appendDom();
   });
 
+  $('main').on('click', '.clear', function(){
+    $.ajax({
+      type: 'GET',
+      url: '/clearSolutionLog',
+      success: function(){
+        appendDom();
+      }
+    });
+  });
 });
 
 var findOperator = function(object){
@@ -110,5 +119,5 @@ var appendDom = function(){
 };
 
 var clearSolutionLog = function(){
-  
+
 }
